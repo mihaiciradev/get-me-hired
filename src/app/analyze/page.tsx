@@ -189,7 +189,7 @@ export default function AnalyzePage() {
                     color: "#fff",
                     fontSize: "12px",
                   }}
-                  formatter={(value: number) => [`${value.toFixed(2)}%`, "Score"]}
+                  formatter={(value) => [`${Number(value).toFixed(2)}%`, "Score"]}
                 />
               </PieChart>
             </ResponsiveContainer>
