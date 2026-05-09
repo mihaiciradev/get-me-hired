@@ -246,7 +246,7 @@ export default function AnalyzePage() {
                   color: "#fff",
                   fontSize: "12px",
                 }}
-                formatter={(value: number) => [`${value}%`, "Similarity"]}
+                formatter={(value) => [`${Number(value)}%`, "Similarity"]}
                 labelFormatter={(label: string) => label}
                 cursor={{ fill: "rgba(124,176,245,0.05)" }}
               />
