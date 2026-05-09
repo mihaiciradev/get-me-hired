@@ -247,7 +247,6 @@ export default function AnalyzePage() {
                   fontSize: "12px",
                 }}
                 formatter={(value) => [`${Number(value)}%`, "Similarity"]}
-                labelFormatter={(label: string) => label}
                 cursor={{ fill: "rgba(124,176,245,0.05)" }}
               />
               <Bar dataKey="similarity" radius={[0, 6, 6, 0]} fill="#7cb0f5" />
