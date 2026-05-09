@@ -37,7 +37,7 @@ export default function Hero() {
           </h1>
 
           <p className="text-sm md:text-base text-white/50 leading-relaxed mb-10 max-w-md">
-            Upload your CV and let AI do the heavy lifting — real job matches,
+            Upload your CV and let AI do the heavy lifting - real job matches,
             salary insights, and career feedback powered by live market data.
           </p>
 

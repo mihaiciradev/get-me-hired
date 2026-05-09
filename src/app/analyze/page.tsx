@@ -157,7 +157,7 @@ export default function AnalyzePage() {
             </div>
           </div>
 
-          {/* Pie chart — category distribution */}
+          {/* Pie chart - category distribution */}
           <div className="bg-[#3a3660]/80 border border-[#7cb0f5]/20 rounded-2xl p-7 backdrop-blur-sm">
             <p className="text-[11px] text-white/40 uppercase tracking-widest mb-1">
               Profile distribution
