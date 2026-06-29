@@ -16,7 +16,7 @@ export default function About() {
               <span className="text-[#7cb0f5]">backed by research.</span>
             </h2>
             <p className="text-sm text-white/50 leading-relaxed mb-4">
-              Get Me Hired is a dissertation project developed at the{" "}
+              This is a dissertation project developed at the{" "}
               <span className="text-white/80 font-medium">West University of Timișoara</span>,
               within the Big Data – Data Science, Analytics &amp; Technologies programme.
             </p>

@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import HowItWorks from "@/components/HowItWorks";
+import UnderTheHood from "@/components/UnderTheHood";
 import About from "@/components/About";
 import Footer from "@/components/Footer";
 
@@ -10,6 +11,7 @@ export default function Home() {
       <Navbar />
       <Hero />
       <HowItWorks />
+      <UnderTheHood />
       <About />
       <Footer />
     </main>

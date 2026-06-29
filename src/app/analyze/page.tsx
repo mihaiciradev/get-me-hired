@@ -31,14 +31,18 @@ type AnalysisResult = {
 
 const CHART_COLORS = ["#7cb0f5", "#9d7cf5", "#f57cb0", "#7cf5c0", "#f5c07c"];
 
-// Wraps a long job title across multiple SVG lines for the Y-axis
+const MAX_LABEL_LEN = 30;
+
 function YAxisTick({ x, y, payload }: { x: number; y: number; payload: { value: string } }) {
-  const words = payload.value.split(" ");
+  const raw = payload.value;
+  const label = raw.length > MAX_LABEL_LEN ? raw.slice(0, MAX_LABEL_LEN - 1) + "…" : raw;
+
+  const words = label.split(" ");
   const lines: string[] = [];
   let current = "";
   for (const word of words) {
     const candidate = current ? `${current} ${word}` : word;
-    if (candidate.length <= 22) {
+    if (candidate.length <= 18) {
       current = candidate;
     } else {
       if (current) lines.push(current);
@@ -46,12 +50,14 @@ function YAxisTick({ x, y, payload }: { x: number; y: number; payload: { value: 
     }
   }
   if (current) lines.push(current);
+  if (lines.length > 2) lines.splice(2);
 
-  const lineH = 13;
+  const lineH = 14;
   const totalH = lines.length * lineH;
 
   return (
     <g transform={`translate(${x},${y})`}>
+      <title>{raw}</title>
       {lines.map((line, i) => (
         <text
           key={i}
@@ -215,11 +221,12 @@ export default function AnalyzePage() {
           <p className="text-sm font-semibold text-white mb-6">
             Top job matches ranked by relevance
           </p>
-          <ResponsiveContainer width="100%" height={320}>
+          <ResponsiveContainer width="100%" height={Math.max(320, barData.length * 44)}>
             <BarChart
               data={barData}
               layout="vertical"
               margin={{ left: 8, right: 32, top: 0, bottom: 0 }}
+              barSize={20}
             >
               <CartesianGrid horizontal={false} stroke="rgba(255,255,255,0.04)" />
               <XAxis

@@ -36,11 +36,11 @@ export default function Navbar() {
           How it works
         </a>
         <a
-          href="#sources"
+          href="#pipeline"
           onClick={handleNavClick}
           className="text-xs text-white/60 hover:text-[#7cb0f5] transition-all hidden sm:block"
         >
-          Data sources
+          Under the hood
         </a>
         <a
           href="#about"
